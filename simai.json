@@ -1,0 +1,720 @@
+{
+  "name": "simai",
+  "version": 2,
+  "measureHorizontalDivision": 1,
+  "difficulties": [
+    "None(easy)",
+    "EASY",
+    "BASIC",
+    "ADVANCED",
+    "EXPERT",
+    "MASTER",
+    "Re:MASTER",
+    "ORIGINAL"
+  ],
+  "checkNoteOverlap": true,
+  "customProps": [],
+  "initialLanes": [
+    {
+      "template": "8-divisions",
+      "horizontalSize": 1,
+      "horizontalPosition": 0
+    },
+    {
+      "template": "16-divisions",
+      "horizontalSize": 1,
+      "horizontalPosition": 0
+    }
+  ],
+  "laneTemplates": [
+    {
+      "name": "8-divisions",
+      "division": 8,
+      "color": "0x333333",
+      "renderer": "default"
+    },
+    {
+      "name": "16-divisions",
+      "division": 16,
+      "boldInterval": 8,
+      "color": "0x333333",
+      "renderer": "dest/24DivisionLaneRenderer.js"
+    }
+  ],
+  "noteTypes": [
+    {
+      "name": "TAP",
+      "renderer": "dest/noteRenderer.js",
+      "connectableTypes": [
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0xff0099"
+      },
+      "customProps": [
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BREAK",
+      "renderer": "dest/noteRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "-",
+        "<",
+        ">",
+        "p",
+        "q",
+        "pp",
+        "qq",
+        "v",
+        "s",
+        "z",
+        "w"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0xffd900"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TOUCH",
+      "renderer": "dest/noteRenderer.js",
+      "connectableTypes": [
+      ],
+      "excludeLanes": [
+        "8-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x86ff6e"
+      },
+      "customProps": [
+      ]
+    },
+    {
+      "name": "TOUCH.C",
+      "renderer": "dest/noteNameCustomRenderer.js",
+      "connectableTypes": [
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x86ff6e"
+      },
+      "customProps": [
+        {
+          "key": "hanabi",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "hanabi": "hanabi"
+            }
+          }
+        },
+        {
+          "key": "name",
+          "defaultValue": "C",
+          "config": {
+            "options": {
+              "C": "C"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HOLD",
+      "renderer": "dest/noteRenderer.js",
+      "connectableTypes": [
+        "HOLD"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0xff0037"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TOUCHHOLD",
+      "renderer": "dest/noteRenderer.js",
+      "connectableTypes": [
+        "TOUCHHOLD"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x2bff00"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "hanabi",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "hanabi": "hanabi"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SLIDE",
+      "renderer": "dest/noteNameCustomRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "-",
+        "<",
+        ">",
+        "p",
+        "q",
+        "pp",
+        "qq",
+        "s",
+        "z",
+        "w",
+        "v"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0xcfe1ff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "middle": "middle",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "name",
+          "defaultValue": "-",
+          "config": {
+            "options": {
+              "-": "-",
+              "<": "<",
+              ">": ">",
+              "p": "p",
+              "q": "q",
+              "pp": "pp",
+              "qq": "qq",
+              "s": "s",
+              "z": "z",
+              "w": "w",
+              "v": "v"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "-",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "-"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "<",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "<"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": ">",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": ">",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        ">"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "<",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "p",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "p"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "q",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "q",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "q"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "p",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pp",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "pp"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "qq",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "qq",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "qq"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "pp",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "v",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "v"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "middle": "middle",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "s",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "s"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "z",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "z",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "z"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "mirrorType": "s",
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "w",
+      "renderer": "dest/noteNameRenderer.js",
+      "connectableTypes": [
+        "SLIDE",
+        "w"
+      ],
+      "excludeLanes": [
+        "16-divisions"
+      ],
+      "editorProps": {
+        "se": "se.wav",
+        "color": "0x478eff"
+      },
+      "customProps": [
+        {
+          "key": "type",
+          "defaultValue": "start",
+          "config": {
+            "options": {
+              "start": "start",
+              "end": "end"
+            }
+          }
+        },
+        {
+          "key": "EX",
+          "defaultValue": "default",
+          "config": {
+            "options": {
+              "default": "default",
+              "EX": "ex"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "customNoteLineRenderers": [
+  ],
+  "noteLineTypes": [],
+  "eventListener": [
+    "dest/eventListener.js",
+    "dest/eventListener-save.js"
+  ],
+  "otherObjectTypes": [
+  ]
+}
