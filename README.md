@@ -2,11 +2,11 @@
 
 ### 使い方
 - 下記URLより設定ファイルをインストールする
-  - URL
+  - https://github.com/mutoene/simai8/releases/tag/v1.0.0
 - 下記URLよりエディタをインストールする
   - https://github.com/tenonno/note-editor/releases
 - ダウンロードしたフォルダをエディタの/asset/musicGameSystemsに置く
-- エディタを起動してsimai8を選択
+- エディタを起動して右上の新規譜面作成からsimai8を選択
 
 ### 書き方
 - レーン
